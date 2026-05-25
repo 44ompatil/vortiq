@@ -2,9 +2,6 @@ import os
 from pathlib import Path
 from typing import Tuple
 
-from typing_extensions import List
-
-
 class dirTraversal:
 
 	def __init__(self, sourceDir : Path) -> None:
@@ -12,11 +9,9 @@ class dirTraversal:
 		self.sourceDir = Path(sourceDir)
 	
 		if not self.sourceDir.exists():
-			self.sourceDir = None
 			raise FileNotFoundError(f"[PATH] : {sourceDir} not found.")
 			
 		if not self.sourceDir.is_dir():
-			self.sourceDir = None
 			raise NotADirectoryError(f"[PATH] : {sourceDir} is not a directory.")
 	
 
