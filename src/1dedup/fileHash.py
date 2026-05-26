@@ -10,12 +10,11 @@ class fileHash:
 	def hashFiles(self, filePaths : Tuple[List[Path], List[Path]]) -> Dict[str, List[Path]]:
 
 		relPath = filePaths[0]
-		# absPath = filePaths[1]
+		absPath = filePaths[1]
 
 		fileHashes: Dict[str, List[Path]] = {}
 
-		for file in relPath:
-			path = Path(file)
+		for path in absPath:
 			hasher = hashlib.sha256()
 			with open(path, 'rb') as f:
 				while content := f.read(self.chunkSize):
