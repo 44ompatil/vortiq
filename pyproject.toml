@@ -8,4 +8,5 @@ dependencies = [
     "fastembed>=0.8.0",
     "pymupdf>=1.27.2.3",
     "qdrant-client[fastembed]>=1.18.0",
+    "scikit-learn>=1.8.0",
 ]
