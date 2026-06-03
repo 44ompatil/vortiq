@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from pathlib import Path
-from fileContent import FileContent
+from src.clustering.fileContent import FileContent
 
 class DirNaming:
     def __init__(self, top_n_words=2):
