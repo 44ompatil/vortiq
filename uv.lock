@@ -1180,7 +1180,7 @@ wheels = [
 ]
 
 [[package]]
-name = "vortex"
+name = "vortiq"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
