@@ -45,9 +45,9 @@ class dataProcessing:
 
 class dbScanModel:
 	def __init__(self) -> None:
-		self.txtEps = 0.20
+		self.txtEps = 0.25
 		self.txtMinPts = 2
-		self.imgEps = 0.45
+		self.imgEps = 0.50
 		self.imgMinPts = 2
 
 		self.data = dataProcessing(txtCollection="txtCollection", imgCollection="imgCollection")
