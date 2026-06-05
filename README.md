@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">🌀 Vortex</h1>
+  <h1 align="center">🌀 Vortiq</h1>
   <p align="center">
     <em>A lightning-fast, zero-cloud CLI utility that cleans your Windows directories by parsing file contents and visual data — automatically destroying clones and generating intelligently named folder structures.</em>
   </p>
