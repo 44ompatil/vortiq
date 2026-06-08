@@ -1,6 +1,6 @@
 [project]
 name = "Vortiq"
-version = "0.1.0"
+version = "1.1.0"
 description = "A lightning-fast, zero-cloud CLI utility that cleans your Windows directories by parsing file contents and visual data — automatically destroying clones and generating intelligently named folder structures."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -12,6 +12,7 @@ dependencies = [
     "pytesseract>=0.3.13",
     "qdrant-client[fastembed]>=1.18.0",
     "scikit-learn>=1.8.0",
+    "tensorflow>=2.21.0",
 ]
 authors = [
     {name = "Om Patil", email = "44ompatil@gmail.com"}

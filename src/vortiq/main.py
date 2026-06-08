@@ -15,17 +15,17 @@ from vortiq.clustering.embeddings import embeddings
 from vortiq.clustering.dbscanModel import dbScanModel
 from vortiq.clustering.dirNaming import DirNaming
 
-app = typer.Typer(help="Vortex CLI - File Organization Tool")
+app = typer.Typer(help="Vortiq CLI - File Organization Tool")
 console = Console()
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S')
 
-@app.command(name="help", help="Display help information about Vortex CLI.")
+@app.command(name="help", help="Display help information about Vortiq CLI.")
 def custom_help(ctx: typer.Context):
     """
     Display help information.
     """
-    console.print("Vortex CLI - Available Commands")
+    console.print("Vortiq CLI - Available Commands")
     console.print("  sort  - Sort a directory by deduplicating and clustering files")
     console.print("  help  - Show this help message")
 
@@ -41,7 +41,7 @@ def sort(
         ),
     ]
 ):
-    console.print("Starting Vortex sort pipeline")
+    console.print("Starting Vortiq sort pipeline")
     console.print(f"Target Directory: {directory}")
     console.print("-" * 40)
 
@@ -155,6 +155,11 @@ def sort(
     cluster_names = namer.generate_names(cluster_to_files)
     logging.info(f"Generated {len(cluster_names)} cluster names.")
     
+    from vortiq.hitl.confirm import confirm_clustering
+    if not confirm_clustering(cluster_items, cluster_names):
+        console.print("[bold red]Operation cancelled by user. No files were moved.[/bold red]")
+        raise typer.Abort()
+        
     console.print("\n" + "-" * 40)
     console.print("[Step 5/5] Reorganizing Files...")
     
